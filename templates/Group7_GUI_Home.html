@@ -1,0 +1,271 @@
+<html>
+    <body bgcolor=#add8e6>
+
+        <center>
+
+        <h1> Mushroom  Classification</h1><br>
+        
+        <form method="POST", action="{{url_for('home')}}">
+
+            <style>
+                input, select {
+                   width: 250px;
+                   border: 2px solid #000;
+                   padding: 0;
+                   margin: 0;
+                   height: 22px;
+                   -moz-box-sizing: border-box;
+                   -webkit-box-sizing: border-box;
+                   box-sizing: border-box;
+                }
+                input {
+                   text-indent: 3px;
+                }
+             </style>
+
+            <label for = "Model" >Choose the model:</label>
+            <select name = "Model" id = "Model">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "ANN">Aritificial Neural Network</option>
+                <option value = "KNN">K Nearest Neighbors</option>
+            </select><br><br>
+
+            <label for = "a" >Cap-Shape:</label>
+            <select name = "a" id = "a">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "b">Bell</option>
+                <option value = "c">Conical</option>
+                <option value = "x">Convex</option>
+                <option value = "f">Flat</option>
+                <option value = "k">Knobbed</option>
+                <option value = "s">Sunken</option>
+            </select><br><br>
+
+            <label for = "b" >Cap-Surface:</label>
+            <select name = "b" id = "b">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "f">Fibrous</option>
+                <option value = "g">Grooves</option>
+                <option value = "y">Scaly</option>
+                <option value = "s">Smooth</option>
+            </select><br><br>
+
+            <label for = "c" >Cap-Color:</label>
+            <select name = "c" id = "c">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "b">Buff</option>
+                <option value = "n">Brown</option>
+                <option value = "c">Cinnamon</option>
+                <option value = "g">Gray</option>
+                <option value = "r">Green</option>
+                <opyion value = "p">Pink</opyion>
+                <option value = "u">Purple</option>
+                <option value = "e">Red</option>
+                <option value = "w">White</option>
+                <option value = "y">Yellow</option>
+            </select><br><br>
+
+            <label for = "d" >Bruises:</label>
+            <select name = "d" id = "d">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "t">Yes</option>
+                <option value = "f">No</option>
+            </select><br><br>
+
+            <label for = "e" >Odor:</label>
+            <select name = "e" id = "e">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "a">Almond</option>
+                <option value = "l">Anise</option>
+                <option value = "c">Creosote</option>
+                <option value = "y">Fishy</option>
+                <option value = "f">Foul</option>
+                <opyion value = "m">Musty</opyion>
+                <option value = "n">None</option>
+                <option value = "p">Pungent</option>
+                <option value = "s">Spicy</option>
+            </select><br><br>
+            
+            <label for = "f" >Gill Attachment::</label>
+            <select name = "f" id = "f">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "a">Attached</option>
+                <!-- <option value = "d">Descending</option> -->
+                <option value = "f">Free</option>
+                <!-- <option value = "n">Notched</option> -->
+            </select><br><br>
+
+            <label for = "g" >Gill-Spacing:</label>
+            <select name = "g" id = "g">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "c">Close</option>
+                <option value = "w">Crowded</option>
+                <!-- <option value = "d">Distant</option> -->
+            </select><br><br>
+
+            <label for = "h" >Gill-Size:</label>
+            <select name = "h" id = "h">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "b">Broad</option>
+                <option value = "n">Narrow</option>
+            </select><br><br>
+
+            <label for = "i" >Gill-Color:</label>
+            <select name = "i" id = "i">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "k">Black</option>
+                <option value = "n">Brown</option>
+                <option value = "b">Buff</option>
+                <option value = "h">Chocolate</option>
+                <option value = "g">Gray</option>
+                <option value = "r">Green</option>
+                <option value = "o">Orange</option>
+                <opyion value = "p">Pink</opyion>
+                <option value = "u">Purple</option>
+                <option value = "e">Red</option>
+                <option value = "w">White</option>
+                <option value = "y">Yellow</option>
+            </select><br><br>
+
+            <label for = "j" >Stalk-shape:</label>
+            <select name = "j" id = "j">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "e">Enlarging</option>
+                <option value = "t">Tapering</option>
+            </select><br><br>
+
+            <label for = "k" >Stalk-Root:</label>
+            <select name = "k" id = "k">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "b">Bulbous</option>
+                <option value = "c">Club</option>
+                <!-- <option value = "u">Cup</option> -->
+                <option value = "e">Equal</option>
+                <!-- <option value = "z">Rhizomorphs</option> -->
+                <option value = "r">Rooted</option>
+            </select><br><br>
+
+            <label for = "l" >Stalk-Surface-Above-Ring:</label>
+            <select name = "l" id = "l">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "f">Fibrous</option>
+                <option value = "y">Scaly</option>
+                <option value = "k">Silky</option>
+                <option value = "s">Smooth</option>
+            </select><br><br>
+
+            <label for = "m" >Stalk-Surface-Below-Ring:</label>
+            <select name = "m" id = "m">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "f">Fibrous</option>
+                <option value = "y">Scaly</option>
+                <option value = "k">Silky</option>
+                <option value = "s">Smooth</option>
+            </select><br><br>
+
+            <label for = "n" >Stalk-Color-Above-Ring:</label>
+            <select name = "n" id = "n">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "n">Brown</option>
+                <option value = "b">Buff</option>
+                <option value = "c">Cinnamon</option>
+                <option value = "g">Gray</option>
+                <option value = "o">Orange</option>
+                <opyion value = "p">Pink</opyion>
+                <option value = "e">Red</option>
+                <option value = "w">White</option>
+                <option value = "y">Yellow</option>
+            </select><br><br>
+
+            <label for = "o" >Stalk-Color-Below-Ring:</label>
+            <select name = "o" id = "o">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "n">Brown</option>
+                <option value = "b">Buff</option>
+                <option value = "c">Cinnamon</option>
+                <option value = "g">Gray</option>
+                <option value = "o">Orange</option>
+                <opyion value = "p">Pink</opyion>
+                <option value = "e">Red</option>
+                <option value = "w">White</option>
+                <option value = "y">Yellow</option>
+            </select><br><br>
+
+            <label for = "p" >Veil Color:</label>
+            <select name = "p" id = "p">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "n">Brown</option>
+                <option value = "o">Orange</option>
+                <option value = "w">White</option>
+                <option value = "y">Yellow</option>
+            </select><br><br>
+
+            <label for = "q" >Ring Number:</label>
+            <select name = "q" id = "q">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "n">None</option>
+                <option value = "o">One</option>
+                <option value = "t">Two</option>
+            </select><br><br>
+
+            <label for = "r" >Ring-Type:</label>
+            <select name = "r" id = "r">
+                <option value="" disabled selected>Select your option</option>
+                <!-- <option value = "c">Cobwebby</option> -->
+                <opyion value = "e">Evanescent</opyion>
+                <option value = "f">Flaring</option>
+                <option value = "l">Large</option>
+                <option value = "n">None</option>
+                <option value = "p">Pendant</option>
+                <!-- <option value = "s">Sheathing</option> -->
+                <!-- <option value = "z">Zone</option> -->
+            </select><br><br>
+            
+            <label for = "s" >Spore-Print-Color:</label>
+            <select name = "s" id = "s">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "k">Black</option>
+                <option value = "n">Brown</option>
+                <option value = "b">Buff</option>
+                <option value = "h">Chocolate</option>
+                <option value = "r">Green</option>
+                <option value = "o">Orange</option>
+                <option value = "u">Purple</option>
+                <option value = "w">White</option>
+                <option value = "y">Yellow</option>
+            </select><br><br>
+
+            <label for = "t" >Population:</label>
+            <select name = "t" id = "t">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "a">Abundant</option>
+                <option value = "c">Clustered</option>
+                <option value = "n">Numerous</option>
+                <option value = "s">Scattered</option>
+                <option value = "v">Several</option>
+                <opyion value = "y">Solitary</opyion>
+            </select><br><br>
+
+            <label for = "u" >Habitat:</label>
+            <select name = "u" id = "u">
+                <option value="" disabled selected>Select your option</option>
+                <option value = "g">Grasses</option>
+                <option value = "l">Leaves</option>
+                <option value = "m">Meadows</option>
+                <option value = "p">Paths</option>
+                <option value = "u">Urban</option>
+                <opyion value = "w">Waste</opyion>
+                <option value = "d">Woods</option>
+            </select><br><br>
+            
+            <br></b>
+            <input type="submit" , value='predict!' >
+        </form>
+
+        <img src='static\mushroom.jpg' alt="mushroom" width="400" 
+        height="500">
+        
+    </center>
+
+    </body>
+</html>
